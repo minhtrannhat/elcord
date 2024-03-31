@@ -39,17 +39,17 @@
   "ID of elcord client (Application ID).
 See <https://discordapp.com/developers/applications/me>."
   :type '(choice (const :tag "'Native' Application ID" "388338871475240965")
-                 (string :tag "Use the specified ID")
-                 (function :tag "Call the function with no args to get the ID."))
+          (string :tag "Use the specified ID")
+          (function :tag "Call the function with no args to get the ID."))
   :group 'elcord)
 
 (defcustom elcord-icon-base
-  '"https://raw.githubusercontent.com/Mstrodl/elcord/master/icons/"
+  '"https://raw.githubusercontent.com/minhtrannhat/elcord/master/icons/"
   "Base URL for icon images. Mode icons will be loaded from this URL + the icon name + '.png'"
   :type '(choice (const :tag "Elcord GitHub Repository"
-                        "https://raw.githubusercontent.com/Mstrodl/elcord/master/icons/")
-                 (string :tag "Use the specified URL base")
-                 (function :tag "Call the function with icon name as an arg to get the URL base."))
+                        "https://raw.githubusercontent.com/minhtrannhat/elcord/master/icons/")
+          (string :tag "Use the specified URL base")
+          (function :tag "Call the function with icon name as an arg to get the URL base."))
   :group 'elcord)
 
 (defcustom elcord-refresh-rate 15
@@ -115,9 +115,11 @@ See <https://discordapp.com/developers/applications/me>."
                                     (puml-mode . "puml-mode_icon")
                                     (puppet-mode . "puppet-mode_icon")
                                     (python-mode . "python-mode_icon")
+                                    (python-ts-mode. "python-mode_icon")
                                     (racket-mode . "racket-mode_icon")
                                     (ruby-mode . "ruby-mode_icon")
                                     (rust-mode . "rust-mode_icon")
+                                    (rust-ts-mode . "rust-mode_icon")
                                     (rustic-mode . "rust-mode_icon")
                                     (scala-mode . "scala-mode_icon")
                                     (solidity-mode . "solidity-mode_icon")
@@ -131,8 +133,8 @@ See <https://discordapp.com/developers/applications/me>."
 Note, these icon names must be available as 'small_image' in Discord."
   :type '(alist :key-type (choice (symbol :tag "Mode name")
                                   (regexp :tag "Regex"))
-                :value-type (choice (string :tag "Icon name")
-                                    (function :tag "Mapping function")))
+          :value-type (choice (string :tag "Icon name")
+                              (function :tag "Mapping function")))
   :group 'elcord)
 
 (defcustom elcord-mode-text-alist '((agda-mode . "Agda")
@@ -170,8 +172,8 @@ Note, these icon names must be available as 'small_image' in Discord."
   "Mapping alist of major modes to text labels to have elcord use."
   :type '(alist :key-type (choice (symbol :tag "Mode name")
                                   (regexp :tag "Regex"))
-                :value-type (choice (string :tag "Text label")
-                                    (function :tag "Mapping function")))
+          :value-type (choice (string :tag "Text label")
+                              (function :tag "Mapping function")))
   :group 'elcord)
 
 (defcustom elcord-display-elapsed 't
@@ -220,14 +222,14 @@ Swap this with your own function if you want a custom buffer-details message."
 (defcustom elcord-editor-icon 'nil
   "Icon to use for the text editor. When nil, use the editor's native icon."
   :type '(choice (const :tag "Editor Default" nil)
-                 (const :tag "Emacs" "emacs_icon")
-                 (const :tag "Emacs (Pen)" "emacs_pen_icon")
-                 (const :tag "Emacs (Material)" "emacs_material_icon")
-                 (const :tag "Emacs (Legacy)" "emacs_legacy_icon")
-                 (const :tag "Emacs (Dragon)" "emacs_dragon_icon")
-                 (const :tag "Spacemacs" "spacemacs_icon")
-                 (const :tag "Doom" "doom_icon")
-                 (const :tag "Doom Cute" "doom_cute_icon"))
+          (const :tag "Emacs" "emacs_icon")
+          (const :tag "Emacs (Pen)" "emacs_pen_icon")
+          (const :tag "Emacs (Material)" "emacs_material_icon")
+          (const :tag "Emacs (Legacy)" "emacs_legacy_icon")
+          (const :tag "Emacs (Dragon)" "emacs_dragon_icon")
+          (const :tag "Spacemacs" "spacemacs_icon")
+          (const :tag "Doom" "doom_icon")
+          (const :tag "Doom Cute" "doom_cute_icon"))
   :group 'elcord)
 
 (defcustom elcord-boring-buffers-regexp-list '("^ "
